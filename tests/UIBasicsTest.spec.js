@@ -6,8 +6,9 @@ test.only('Browser context test', async ({ browser }) => {
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto('https://demowebshop.tricentis.com/');
-    console.log(page.title);
+    console.log(await page.title);
     await expect(page).toHaveTitle("Demo Web Shop");
+    await page.getByRole("link", "Log in").click();
 });
 
 test('Page context test', async ({ page }) => {
