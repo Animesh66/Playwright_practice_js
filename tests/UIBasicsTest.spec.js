@@ -8,7 +8,11 @@ test.only('Browser context test', async ({ browser }) => {
     await page.goto('https://demowebshop.tricentis.com/');
     console.log(await page.title);
     await expect(page).toHaveTitle("Demo Web Shop");
-    await page.getByRole("link", "Log in").click();
+    await page.locator(".ico-login").click();
+    // await page.getByRole("link", "Log in").click();
+    await page.locator(".email").fill("anitest@gmail.com");
+    await page.locator(".password").fill("Tweety@944");
+    await page.locator(".button-1 login-button").click();
 });
 
 test('Page context test', async ({ page }) => {
