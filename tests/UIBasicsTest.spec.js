@@ -9,8 +9,8 @@ test.only('Browser context test', async ({ browser }) => {
     console.log(await page.title());
     await expect(page).toHaveTitle("Demo Web Shop");
     await page.getByRole("link", { name: 'Log in' }).click();
-    await page.locator(".email").fill("anitest@gmail.com");
-    await page.locator(".password").fill("Tweety@944");
+    await page.getByRole("textbox", { name: 'Email' }).fill("anitest@gmail.com");
+    await page.getByRole("textbox", { name: 'Password' }).fill("Tweety@944");
     await page.getByRole('button', { name: 'Log in' }).click();
     await expect(page.locator(".ico-logout")).toBeVisible();
 
