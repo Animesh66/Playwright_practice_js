@@ -13,9 +13,11 @@ test.only('Browser context test', async ({ browser }) => {
     await page.getByRole("textbox", { name: 'Password' }).fill("Tweety@944");
     await page.getByRole('button', { name: 'Log in' }).click();
     await expect(page.locator(".ico-logout")).toBeVisible();
-    const computer_hover = page.getByRole("link", { name: 'Computers' }).nth(0);
-    await computer_hover.hover();
+    const computerHover = page.getByRole("link", { name: 'Computers' }).nth(0);
+    await computerHover.hover();
     await page.getByRole("link", { name: 'Desktops' }).click();
+    const desiredProduct = await page.getByRole("link", { name: "Build your own cheap computer"}).nth(1);
+    await desiredProduct.click();
 
 });
 
