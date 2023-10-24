@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const { assert } = require('console');
 
 test.only('Browser context test', async ({ browser }) => {
     // playwright code
@@ -18,8 +19,8 @@ test.only('Browser context test', async ({ browser }) => {
     await page.getByRole("link", { name: 'Desktops' }).click();
     const desiredProduct = await page.getByRole("link", { name: "Build your own cheap computer"}).nth(1);
     await desiredProduct.click();
-    const productPrice = page.locator("span.price-value-72").textContent();
-    console.log(productPrice);
+    const productPriceLocator = page.locator("span.price-value-72");
+    await expect(productPriceLocator).toContainText('800');
 
 });
 
