@@ -24,8 +24,6 @@ test.only('Browser context test', async ({ browser }) => {
     const productPriceLocator = page.locator("span.price-value-72");
     await expect(productPriceLocator).toContainText('800');
 
-
-
 });
 
 test('Page context test', async ({ page }) => {
