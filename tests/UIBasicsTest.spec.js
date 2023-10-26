@@ -12,7 +12,9 @@ test.only('Browser context test', async ({ browser }) => {
     await page.getByRole("link", { name: 'Log in' }).click();
     await page.getByRole("textbox", { name: 'Email' }).fill("anitest@gmail.com");
     await page.getByRole("textbox", { name: 'Password' }).fill("Tweety@944");
+    await page.pause();
     await page.getByRole('button', { name: 'Log in' }).click();
+    await page.waitForLoadState("networkidle");
     await expect(page.locator(".ico-logout")).toBeVisible();
     const computerHover = page.getByRole("link", { name: 'Computers' }).nth(0);
     await computerHover.hover();
@@ -21,6 +23,8 @@ test.only('Browser context test', async ({ browser }) => {
     await desiredProduct.click();
     const productPriceLocator = page.locator("span.price-value-72");
     await expect(productPriceLocator).toContainText('800');
+
+
 
 });
 

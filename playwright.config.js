@@ -39,12 +39,17 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],
+        launchOptions: {
+          args: ["--start-maximized"] },
+        }
     },
 
     // {
     //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
+    //   use: { ...devices['Desktop Firefox'],
+        //  launchOptions: {
+        // args: ["--kiosk"] },
     // },
 
     // {
