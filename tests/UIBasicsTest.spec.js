@@ -12,6 +12,7 @@ test.only('Browser context test', async ({ browser }) => {
     await page.getByRole("link", { name: 'Log in' }).click();
     await page.getByRole("textbox", { name: 'Email' }).fill("anitest@gmail.com");
     await page.getByRole("textbox", { name: 'Password' }).fill("Tweety@944");
+    await page.pause();
     await page.getByRole('button', { name: 'Log in' }).click();
     await page.waitForLoadState("networkidle");
     await expect(page.locator(".ico-logout")).toBeVisible();
