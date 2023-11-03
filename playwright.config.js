@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+const { on } = require('events');
 
 /**
  * Read environment variables from file.
@@ -28,7 +29,9 @@ module.exports = defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
     headless: false,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
+    screenshot: 'on',
+
   },
   timeout: 30 * 1000,
   expect: {
@@ -39,17 +42,19 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
+      use: {
+        ...devices['Desktop Chrome'],
         launchOptions: {
-          args: ["--start-maximized"] },
-        }
+          args: ["--start-maximized"]
+        },
+      }
     },
 
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'],
-        //  launchOptions: {
-        // args: ["--kiosk"] },
+    //  launchOptions: {
+    // args: ["--kiosk"] },
     // },
 
     // {
