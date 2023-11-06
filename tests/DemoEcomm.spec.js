@@ -15,6 +15,5 @@ test.only('Verify order placed with order id', async ({ browser }) => {
     await page.getByPlaceholder('Passsword', { exact: true }).fill('Test@123');
     await page.getByPlaceholder('Confirm Passsword').fill('Test@123');
     await page.getByRole('checkbox').check();
-    await page.pause();
     await page.getByRole('button', { name: 'Register' }).click();
 })
