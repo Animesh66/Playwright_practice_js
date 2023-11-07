@@ -9,11 +9,12 @@ test.only('Verify order placed with order id', async ({ browser }) => {
     await page.getByRole('textbox', { name: 'First Name' }).fill("Animesh");
     await page.getByRole('textbox', { name: 'Last Name' }).fill("Mukherjee");
     await page.getByRole('textbox', { name: 'Email' }).fill("anitest@email.com");
-    await page.getByPlaceholder('enter your number').fill('0123456789');
+    await page.getByPlaceholder('enter your number').fill('9093624381');
     await page.getByRole('combobox').selectOption('3: Engineer');
     await page.getByLabel('Male', { exact: true }).check();
-    await page.getByPlaceholder('Passsword', { exact: true }).fill('Test@123');
-    await page.getByPlaceholder('Confirm Passsword').fill('Test@123');
+    await page.getByPlaceholder('Passsword', { exact: true }).fill('Test12345678');
+    await page.getByPlaceholder('Confirm Passsword').fill('Test12345678');
     await page.getByRole('checkbox').check();
     await page.getByRole('button', { name: 'Register' }).click();
+    await expect(page.getByRole('button', {name: 'Login'})).toBeVisible();
 })
