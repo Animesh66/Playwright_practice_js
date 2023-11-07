@@ -37,8 +37,10 @@ test.only('Verify login successful', async ({ browser }) => {
     await page.locator('input[type="text"]').nth(1).fill('123');
     await page.locator('input[type="text"]').nth(2).fill('test');
     await page.getByPlaceholder('Select Country').type('india', {delay: 500});
-    await page.pause();
     const countryDropdowns = await page.locator(".ta-item");
     await countryDropdowns.nth(1).click();
     await page.getByText('Place Order').click();
+    await expect(page.locator('.hero-primary')).toHaveText(" Thankyou for the order. ");
+    const orderId = await page.locator('.em-spacer-1 .ng-star-inserted').textContent();
+    console.log(`${orderId}`);
 })
