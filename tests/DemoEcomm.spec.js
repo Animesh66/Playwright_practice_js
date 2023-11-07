@@ -30,7 +30,7 @@ test.only('Verify login successful', async ({ browser }) => {
     await expect(page.getByRole('button', {name: ' HOME '})).toBeVisible();
     await page.getByRole('button', { name: ' View' }).first().click();
     await expect(page.getByRole('link', {name: 'Continue Shopping'})).toBeVisible();
-    await page.pause();
+    await page.waitForLoadState('networkidle');
     await page.getByRole('button', {name: 'Add to Cart'}).click();
     await page.getByRole('button', { name: ' Cart 1' }).click();
     await page.getByRole('button', { name: 'Checkout❯' }).click();
