@@ -34,4 +34,11 @@ test.only('Verify login successful', async ({ browser }) => {
     await page.getByRole('button', {name: 'Add to Cart'}).click();
     await page.getByRole('button', { name: ' Cart 1' }).click();
     await page.getByRole('button', { name: 'Checkout❯' }).click();
+    await page.locator('input[type="text"]').nth(1).fill('123');
+    await page.locator('input[type="text"]').nth(2).fill('test');
+    await page.getByPlaceholder('Select Country').type('india', {delay: 500});
+    await page.pause();
+    const countryDropdowns = await page.locator(".ta-item");
+    await countryDropdowns.nth(1).click();
+    await page.getByText('Place Order').click();
 })
