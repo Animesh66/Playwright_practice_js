@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const exp = require('constants');
 
 test('Verify new user registration successful', async ({ browser }) => {
     const context = await browser.newContext();
@@ -44,4 +45,18 @@ test.only('Verify order placed', async ({ browser }) => {
     const orderId = await page.locator('.em-spacer-1 .ng-star-inserted').textContent();
     console.log(`${orderId}`);
     await page.getByRole('button', { name: 'ORDERS' }).click();
+    await page.locator('tbody').waitFor();
+    const orderRows = await page.locator("tbody tr");
+    const rowCount = await orderRows.count();
+    console.log(rowCount);
+    for (let i=0; i < rowCount; ++i){
+        const expectOrderId = await orderRows.nth(i).locator("th").textContent();
+        console.log(expectOrderId);
+        if (orderId.includes(expectOrderId)){
+            await orderRows.nth(i).getByRole('button', { name: 'View'}).click();
+            break;
+        }        
+    }
+    const actualOrderId = await page.locator('.col-text').textContent();
+    expect(orderId.includes(actualOrderId)).toBeTruthy();
 })
