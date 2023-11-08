@@ -19,7 +19,7 @@ test('Verify new user registration successful', async ({ browser }) => {
     await expect(page.getByRole('button', {name: 'Login'})).toBeVisible();
 })
 
-test.only('Verify login successful', async ({ browser }) => {
+test.only('Verify order placed', async ({ browser }) => {
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/client");
@@ -27,20 +27,21 @@ test.only('Verify login successful', async ({ browser }) => {
     await page.getByRole('textbox', { name: 'Email' }).fill("anitest@email.com");
     await page.getByPlaceholder('enter your passsword').fill('Test12345678');
     await page.getByRole('button', { name: 'Login' }).click();
-    await expect(page.getByRole('button', {name: ' HOME '})).toBeVisible();
-    await page.getByRole('button', { name: ' View' }).first().click();
-    await expect(page.getByRole('link', {name: 'Continue Shopping'})).toBeVisible();
+    await expect(page.getByRole('button', { name: 'HOME'})).toBeVisible();
+    await page.getByRole('button', { name: 'View' }).first().click();
+    await expect(page.getByRole('link', { name: 'Continue Shopping'})).toBeVisible();
     await page.waitForLoadState('networkidle');
-    await page.getByRole('button', {name: 'Add to Cart'}).click();
-    await page.getByRole('button', { name: ' Cart 1' }).click();
-    await page.getByRole('button', { name: 'Checkout❯' }).click();
+    await page.getByRole('button', { name: 'Add to Cart'}).click();
+    await page.getByRole('button', { name: 'Cart' }).first().click();
+    await page.getByRole('button', { name: 'Checkout' }).click();
     await page.locator('input[type="text"]').nth(1).fill('123');
     await page.locator('input[type="text"]').nth(2).fill('test');
     await page.getByPlaceholder('Select Country').type('india', {delay: 500});
     const countryDropdowns = await page.locator(".ta-item");
     await countryDropdowns.nth(1).click();
     await page.getByText('Place Order').click();
-    await expect(page.locator('.hero-primary')).toHaveText(" Thankyou for the order. ");
+    await expect(page.locator('.hero-primary')).toHaveText("Thankyou for the order.");
     const orderId = await page.locator('.em-spacer-1 .ng-star-inserted').textContent();
     console.log(`${orderId}`);
+    await page.getByRole('button', { name: 'ORDERS' }).click();
 })
