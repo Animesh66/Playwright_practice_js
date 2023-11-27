@@ -1,7 +1,7 @@
 const {test, expect, request} = require('@playwright/test')
 
 
-test.only('Login to application', async ({browser}) => {
+test.only('Handle multiple window in playwright', async ({browser}) => {
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
@@ -11,4 +11,3 @@ test.only('Login to application', async ({browser}) => {
     const actualText = await newPage.locator('.red').textContent();
     console.log(actualText);
 })  
-
