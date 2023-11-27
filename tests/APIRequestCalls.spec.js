@@ -32,7 +32,8 @@ test.beforeAll('Login to application', async () => {
             }
         });
     const orderResponseJson = await orderResponse.json();
-    orderId = orderResponseJson.orders[0]
+    orderId = orderResponseJson.orders[0];
+    console.log(orderId);
 })
 
 test('Vaidate Home Page', async ({browser}) => {
@@ -52,6 +53,8 @@ test.only('Create Orders', async ({browser}) => {
         window.localStorage.setItem('token', value);
     }, token);
     await page.goto('https://rahulshettyacademy.com/client/');
+    await page.getByRole('button', { name: 'ORDERS' }).click();
+    await page.locator('tbody').waitFor();
     const orderRows = await page.locator("tbody tr");
     const rowCount = await orderRows.count();
     console.log(rowCount);
