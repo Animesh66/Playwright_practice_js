@@ -8,6 +8,11 @@ test.beforeAll('Login to application', async () => {
         {url: 'https://rahulshettyacademy.com/api/ecom/auth/login'},
         {data: loginPayload});
     expect(loginResponse.ok()).toBeTruthy();  // Verify reponse code is 2XX
-    const reponseJson = loginResponse.json(); // convert response to JSON
+    const reponseJson = await loginResponse.json(); // convert response to JSON
     const token = reponseJson.token; // Get the token from the reponse JSON
+    console.log(token);
+})
+
+test.only('Create Order', async ({browser}) => {
+    await expect(page.getByRole('button', { name: 'HOME'})).toBeVisible();
 })
