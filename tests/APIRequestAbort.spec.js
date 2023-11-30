@@ -26,6 +26,8 @@ test.beforeAll('Login to application', async () => {
 })
 
 test.only('Create Orders', async ({page}) => {
+    page.on('request', request => console.log(request.url())); // This will listen to events and print requests in console.
+    page.on('response', response => console.log(response.url(), response.status()));  // This will listen to response events and print the response url and the status code in console.
     await page.addInitScript(async (value) => {  // Setting the value of token in local storage
         window.localStorage.setItem('token', value);
     }, token);
