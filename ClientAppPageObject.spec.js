@@ -1,5 +1,6 @@
 const {test, expect} = require('@playwright/test');
 const {LoginPage} = require('../pageobjects/LoginPage');
+const {DashBoardPage} = require('../pageobjects/DashBoardPage');
 const baseUrl = "https://rahulshettyacademy.com/client"
 const userEmail = "anitest@email.com";
 const userPassword = "Test12345678";
