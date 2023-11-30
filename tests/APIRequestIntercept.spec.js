@@ -34,13 +34,12 @@ test.only('Create Orders', async ({page}) => {
     await page.getByRole('button', { name: 'ORDERS' }).click();
     
     await page.route(getOrderDetailsUrl,
-    async route => {  // This route will be call once the getCustomerOrderUrl endpoint is ht in the browser.
-        route.continue( // fulfill will alter the response send to the brwoser.
+    async route => {  // This route will be call once the getCustomerOrderUrl endpoint is hit in the browser.
+        route.continue( // Send the modified url to the server.
             {
                 url: "https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=65679b079fd99c85e8db49bf"
             })
     })
     await page.getByRole('button', { name: 'View'}).first().click();
-    await page.waitForResponse(getCustomerOrderUrl);  // Waiting for actual respose to come back from server before sending the fake reposne
-
+    await page.pause();
 })
