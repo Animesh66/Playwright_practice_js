@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
-const {LoginPage} = require('../pageobjects/LoginPage');
-const {DashBoardPage} = require('../pageobjects/DashBoardPage');
+const { BasePage } = require('../pageobjects/BasePage');
+
 const baseUrl = "https://rahulshettyacademy.com/client"
 const userEmail = "anitest@email.com";
 const userPassword = "Test12345678";
@@ -8,7 +8,8 @@ const userPassword = "Test12345678";
 test.only('Client App Place Order', async ({ browser }) => {
     const context = await browser.newContext();
     const page = await context.newPage();
-    const loginPage = new LoginPage(page);
+    const basePage = new BasePage(page);
+    const loginPage = basePage.getLoginPage();
     await loginPage.navigateUrl(baseUrl);
     await loginPage.perfromLogin(userEmail, userPassword);
     await expect(page.getByRole('button', { name: 'HOME'})).toBeVisible();
