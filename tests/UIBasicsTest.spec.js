@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { assert } = require('console');
 
-test.describe.configure({ mode: 'parallel' });  // This decorator will runn all other tests parallel
+test.describe.configure({ mode: 'parallel' });  // This decorator will run all other tests in parallel in this file.
 test('@web Browser context test', async ({ browser }) => {  // @web is a tag to run specific tests at a time.
     // playwright code
     // Crete a new instance of the browser is context(incognito)
