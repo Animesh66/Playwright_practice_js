@@ -14,3 +14,8 @@ allure generate my-allure-results -o allure-report --clean
 
 Open Allure Report:
 allure open allure-report
+
+
+To run tests from package.json file run command:
+
+'npm run webTests'
