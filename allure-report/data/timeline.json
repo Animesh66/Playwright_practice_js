@@ -1,0 +1,85 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "Animeshs-MacBook-Pro.local",
+    "children" : [ {
+      "name" : "Animeshs-MacBook-Pro.local-16342-playwright-worker-0",
+      "children" : [ {
+        "name" : "@web Browser context test",
+        "uid" : "5852851c7c449144",
+        "parentUid" : "a11e032e8fcf75be57b9b0c304e671c2",
+        "status" : "failed",
+        "time" : {
+          "start" : 1701620857678,
+          "stop" : 1701620857832,
+          "duration" : 154
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "chromium" ]
+      }, {
+        "name" : "@web Browser context test",
+        "uid" : "365efbdafdd2ed3e",
+        "parentUid" : "a11e032e8fcf75be57b9b0c304e671c2",
+        "status" : "failed",
+        "time" : {
+          "start" : 1701620856655,
+          "stop" : 1701620856829,
+          "duration" : 174
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "chromium" ]
+      }, {
+        "name" : "@web Browser context test",
+        "uid" : "fc6549268f25bf7a",
+        "parentUid" : "a11e032e8fcf75be57b9b0c304e671c2",
+        "status" : "failed",
+        "time" : {
+          "start" : 1701620855699,
+          "stop" : 1701620855836,
+          "duration" : 137
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "chromium" ]
+      } ],
+      "uid" : "a11e032e8fcf75be57b9b0c304e671c2"
+    }, {
+      "name" : "Animeshs-MacBook-Pro.local-16532-playwright-worker-0",
+      "children" : [ {
+        "name" : "@web Browser context test",
+        "uid" : "b23bbdb982f02746",
+        "parentUid" : "b641d853dc092c0261e9f43cb9b2efb8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1701620970339,
+          "stop" : 1701620987773,
+          "duration" : 17434
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 3,
+        "retriesStatusChange" : true,
+        "parameters" : [ "chromium" ]
+      } ],
+      "uid" : "b641d853dc092c0261e9f43cb9b2efb8"
+    } ],
+    "uid" : "693a43bf68384fd32b915d8aee9b6f4f"
+  } ]
+}

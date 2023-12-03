@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Dec 03 17:29:30 CET 2023","Sun Dec 03 17:29:47 CET 2023","17434","chromium","UIBasicsTest.spec.js","","","","@web Browser context test",""

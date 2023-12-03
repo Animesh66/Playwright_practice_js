@@ -1,0 +1,11 @@
+[ {
+  "uid" : "b23bbdb982f02746",
+  "name" : "@web Browser context test",
+  "time" : {
+    "start" : 1701620970339,
+    "stop" : 1701620987773,
+    "duration" : 17434
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
