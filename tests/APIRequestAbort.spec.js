@@ -1,5 +1,5 @@
 const {test, expect, request} = require('@playwright/test');
-const {APIUtils} = require('./utils/APIUtils');
+const {APIUtils} = require('../utils/APIUtils');
 const loginUrl = "https://rahulshettyacademy.com/api/ecom/auth/login";
 const loginPayload = {userEmail: "anitest@email.com", userPassword: "Test12345678"};
 const createOrderUrl = "https://rahulshettyacademy.com/api/ecom/order/create-order";
