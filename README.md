@@ -10,7 +10,7 @@ Or pass the same value via command line:
 npx playwright test --reporter=line,allure-playwright
 
 Generate Allure Report:
-allure generate my-allure-results -o allure-report --clean
+allure generate allure-results -o allure-report --clean
 
 Open Allure Report:
 allure open allure-report
