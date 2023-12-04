@@ -6,7 +6,8 @@
   "scripts": {
     "testAll": "npx playwright test",
     "webTests": "npx playwright test --grep @web",
-    "apiTests": "npx playwright test --grep @api"
+    "apiTests": "npx playwright test --grep @api",
+    "pageObjectTests": "npx playwright test --grep @pageobject"
   },
   "keywords": [],
   "author": "",
