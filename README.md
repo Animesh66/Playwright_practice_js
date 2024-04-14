@@ -11,12 +11,12 @@ Or pass the same value via command line:
 
 ***Generate Allure Report***
 
-allure generate allure-results -o allure-report --clean
+`allure generate allure-results -o allure-report --clean`
 
 ***Open Allure Report***
 `allure open allure-report`
 
 
-To run tests from package.json file run command:
+***To run tests from package.json file run command:***
 
 `npm run webTests`
